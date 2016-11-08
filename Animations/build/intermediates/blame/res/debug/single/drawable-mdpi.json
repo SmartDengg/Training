@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_photo.png",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/drawable-mdpi/ic_action_photo.png"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_new.png",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/drawable-mdpi/ic_action_new.png"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/drawable-mdpi/ic_list_remove.png",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/drawable-mdpi/ic_list_remove.png"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/drawable-mdpi/ic_action_info.png",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/drawable-mdpi/ic_action_info.png"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/drawable-mdpi/ic_launcher.png"
+    }
+]

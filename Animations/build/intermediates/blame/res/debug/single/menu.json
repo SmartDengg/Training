@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/menu/activity_screen_slide.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/menu/activity_screen_slide.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/menu/activity_crossfade.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/menu/activity_crossfade.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/menu/activity_layout_changes.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/menu/activity_layout_changes.xml"
+    }
+]

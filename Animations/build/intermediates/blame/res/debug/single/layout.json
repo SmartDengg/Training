@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_crossfade.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_crossfade.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_zoom.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_zoom.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_layout_changes.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_layout_changes.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/fragment_card_back.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/fragment_card_back.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/excerpt_content.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/excerpt_content.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/list_item_example.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/list_item_example.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_card_flip.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_card_flip.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/fragment_screen_slide_page.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/fragment_screen_slide_page.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/activity_screen_slide.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/activity_screen_slide.xml"
+    },
+    {
+        "merged": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/build/intermediates/res/merged/debug/layout/fragment_card_front.xml",
+        "source": "/Users/SmartDengg/workspace/SmartDengg/Android_Sample/Android_Training/Animations/src/main/res/layout/fragment_card_front.xml"
+    }
+]
