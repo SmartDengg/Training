@@ -1,3 +1,6 @@
-include ':app', ':displayingBitmaps', ':sqllitesample'
+include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2'
 include ':photoIntentActivity'
 include ':Animations'
+include ':effectiveNavigation'
+include ':navigationDrawer'
+include ':notifyUser'
