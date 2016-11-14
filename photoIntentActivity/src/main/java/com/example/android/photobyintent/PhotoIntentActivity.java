@@ -59,7 +59,7 @@ public class PhotoIntentActivity extends Activity {
 
     if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
 
-      storageDir =  mAlbumStorageDirFactory.getAlbumStorageDir(getAlbumName());
+      storageDir = mAlbumStorageDirFactory.getAlbumStorageDir(getAlbumName());
 
       //storageDir =
       //    new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), getAlbumName());

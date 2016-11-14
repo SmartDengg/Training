@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.smartdengg.searchview">
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+
+    <activity android:name=".MainActivity">
+
+      <!--But configuring the search activity in most cases is also superfluous. Most often the search
+      is global for a project. So why not assume that this is the default. So if the AndroidManifest.xml
+      file contains exactly one activity that has an intent filter for the action android.action.SEARCH
+      this activity should be the global default for search. If more than one activity with the intent
+      filter exists or if you want to use search only for certain activities you still can configure this by hand-->
+      <meta-data
+        android:name="android.app.default_searchable"
+        android:value=".SearchResultsActivity" />
+
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name=".SearchResultsActivity"
+      android:launchMode="singleTop">
+
+      <meta-data
+        android:name="android.app.searchable"
+        android:resource="@xml/searchable" />
+
+      <intent-filter>
+        <action android:name="android.intent.action.SEARCH" />
+      </intent-filter>
+
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+      </intent-filter>
+    </activity>
+
+    <provider
+      android:name=".MySuggestionProvider"
+      android:authorities="com.smartdengg.searchview.MySuggestionProvider"
+      android:exported="false" />
+
+  </application>
+
+</manifest>

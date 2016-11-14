@@ -1,4 +1,4 @@
-include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2'
+include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview'
 include ':photoIntentActivity'
 include ':Animations'
 include ':effectiveNavigation'
