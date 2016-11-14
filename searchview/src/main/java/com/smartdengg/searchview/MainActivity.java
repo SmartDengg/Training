@@ -8,8 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+/**
+ * http://codetheory.in/adding-search-to-android/
+ * http://www.grokkingandroid.com/android-tutorial-adding-suggestions-to-search/
+ * http://www.grokkingandroid.com/android-tutorial-adding-search-to-your-apps/
+ * http://www.grokkingandroid.com/why-is-there-no-configuration-by-default-for-android-search/
+ *
+ *
+ * http://www.grokkingandroid.com/adding-actionviews-to-your-actionbar/
+ * http://www.grokkingandroid.com/adding-action-items-from-within-fragments/
+ */
 public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = MainActivity.class.getSimpleName();
@@ -35,11 +46,24 @@ public class MainActivity extends AppCompatActivity {
         }
       });
     }
-
     return true;
   }
 
+  @Override public boolean onOptionsItemSelected(MenuItem item) {
+
+    switch (item.getItemId()) {
+      case R.id.search:
+        //MainActivity.this.onSearchRequested();
+        return true;
+    }
+
+    return super.onOptionsItemSelected(item);
+  }
+
   @Override public boolean onSearchRequested() {
-    return super.onSearchRequested();
+    Bundle appData = new Bundle();
+    appData.putString("hello", "world");
+    startSearch(null, false, appData, false);
+    return true;
   }
 }
