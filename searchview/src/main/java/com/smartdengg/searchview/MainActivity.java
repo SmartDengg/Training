@@ -4,12 +4,12 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
 /**
  * http://codetheory.in/adding-search-to-android/
@@ -36,15 +36,25 @@ public class MainActivity extends AppCompatActivity {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
       // 关联检索配置和SearchView
       SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-      SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+      MenuItem menuItem = menu.findItem(R.id.search);
+      SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+      searchView.setIconifiedByDefault(false);
       searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
-      searchView.setIconifiedByDefault(false);
-      searchView.setOnSearchClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-          Log.d(TAG, "trigger search event");
-        }
-      });
+      MenuItemCompat.OnActionExpandListener expandListener =
+          new MenuItemCompat.OnActionExpandListener() {
+            @Override public boolean onMenuItemActionCollapse(MenuItem item) {
+              Toast.makeText(MainActivity.this, "collapses", Toast.LENGTH_LONG).show();
+              return true;  // Return true to collapse action view
+            }
+
+            @Override public boolean onMenuItemActionExpand(MenuItem item) {
+              Toast.makeText(MainActivity.this, "expand", Toast.LENGTH_LONG).show();
+              return true;  // Return true to expand action view
+            }
+          };
+
+      MenuItemCompat.setOnActionExpandListener(menuItem, expandListener);
     }
     return true;
   }
