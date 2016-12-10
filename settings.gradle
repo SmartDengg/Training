@@ -1,4 +1,7 @@
 include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview',
+    ':dynamictheme',
+    ':bigbitmap',
+    ':wakelock',
     ':customview'
 include ':photoIntentActivity'
 include ':Animations'
