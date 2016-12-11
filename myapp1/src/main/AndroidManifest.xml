@@ -18,7 +18,9 @@
     <activity
       android:name=".MainActivity2"
       android:allowTaskReparenting="true"
-      android:taskAffinity="com.smartdengg.dengwei" />
+      android:launchMode="singleTask"
+      android:taskAffinity="com.smartdengg11" />
+    <!--com.jingdong.app.mall-->
 
   </application>
 

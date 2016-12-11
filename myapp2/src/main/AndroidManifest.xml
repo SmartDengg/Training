@@ -9,8 +9,9 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity
-      android:name=".MyActivity"
-      android:taskAffinity="com.smartdengg.dengwei">
+      android:name=".MainActivity"
+      android:launchMode="singleTask"
+      android:taskAffinity="com.smartdengg11">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

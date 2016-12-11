@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +20,7 @@ public class NormalActivity extends Activity {
     setContentView(R.layout.imageview);
 
     ImageView imageView = (ImageView) findViewById(R.id.iv);
-    imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+    //imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
     try {
       InputStream inputStream = getAssets().open("big.jpg");

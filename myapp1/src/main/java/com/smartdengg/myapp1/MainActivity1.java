@@ -18,7 +18,7 @@ public class MainActivity1 extends AppCompatActivity {
     textView.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
       }
     });
