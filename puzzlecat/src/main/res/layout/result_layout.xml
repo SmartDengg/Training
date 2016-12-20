@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+      android:id="@+id/result_iv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:adjustViewBounds="true"
+      android:scaleType="centerInside"
+      tools:src="@drawable/icon_7" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@id/result_iv"
+      android:layout_alignRight="@id/result_iv"
+      android:layout_below="@id/result_iv"
+      android:gravity="center"
+      android:padding="@dimen/material_8dp"
+      android:text="Enjoy it, Hope you like it"
+      android:typeface="monospace" />
+  </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

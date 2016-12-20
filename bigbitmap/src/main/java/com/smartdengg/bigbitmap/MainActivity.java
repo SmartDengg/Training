@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     findViewById(R.id.region).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        MainActivity.this.startActivity(
-            new Intent(MainActivity.this, RegionActivity.class));
+        MainActivity.this.startActivity(new Intent(MainActivity.this, RegionActivity.class));
       }
     });
   }

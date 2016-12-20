@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/viewanimator"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:inAnimation="@android:anim/slide_in_left"
+  android:outAnimation="@android:anim/slide_out_right">
+
+  <!--可拼图的View-->
+  <RelativeLayout
+    android:id="@+id/puzzle_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+      android:id="@+id/preview_btn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_margin="4dp"
+      android:gravity="center"
+      android:padding="4dp"
+      android:text="preview" />
+
+    <ScrollView
+      android:id="@+id/scrollview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@id/preview_btn"
+      android:layout_alignParentTop="true"
+      android:gravity="center">
+
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:clipToPadding="false"
+        android:padding="16dp" />
+    </ScrollView>
+  </RelativeLayout>
+
+
+  <!--展示拼图效果View-->
+  <android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <ImageView
+        android:id="@+id/result_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_7" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/result_iv"
+        android:layout_alignRight="@id/result_iv"
+        android:layout_below="@id/result_iv"
+        android:gravity="center"
+        android:padding="@dimen/material_8dp"
+        android:text="Enjoy it, Hope you like it"
+        android:typeface="monospace" />
+    </RelativeLayout>
+  </android.support.v4.widget.NestedScrollView>
+
+</ViewAnimator>

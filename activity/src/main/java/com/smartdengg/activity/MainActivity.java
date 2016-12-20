@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,17 +16,21 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
-    Log.d(TAG, "onCreate");
+
+    SparseArray<String> sparseArray = new SparseArray<>();
+
+    sparseArray.put(0, "0");
+    sparseArray.put(0, "00");
+    sparseArray.put(1, "1");
+    sparseArray.put(2, "2");
+    sparseArray.put(3, "3");
+    sparseArray.put(4, "4");
+
+    sparseArray.append(5, "5");
+    sparseArray.append(5, "55");
+
+    sparseArray.delete(0);
+    sparseArray.indexOfKey(1);
 
     findViewById(android.R.id.text1).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {

@@ -37,7 +37,7 @@ public class Outer {
     System.out.println("Outer.outerInvoke");
   }
 
-  static void access$0(Outer outer) {
+  public static void access$0(Outer outer) {
     String string = outer.mString;
   }
 
