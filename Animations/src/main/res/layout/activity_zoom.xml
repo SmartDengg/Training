@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="@string/message_zoom_touch_expand" />
 
-        <!-- This is an example layout containing thumbnail image buttons that, when pressed,
+        <!-- This is an example layout containing thumbnail image buttons that, when selected,
              zoom in to show more detail. All of the zooming and animation logic is in
              the ZoomActivity class. -->
         <LinearLayout
@@ -41,7 +41,7 @@
             <!-- These buttons don't have any decorations (3D bevel, etc.), but it's still
                  important to show feedback on touch or focus. The custom
                  "ToughHighlightImageButton" ImageButton subclass helps achieve this by drawing
-                 the standard system "pressed" and "focused" overlay upon user interaction. -->
+                 the standard system "selected" and "focused" overlay upon user interaction. -->
 
             <com.example.android.animationsdemo.TouchHighlightImageButton
                 android:id="@+id/thumb_button_1"

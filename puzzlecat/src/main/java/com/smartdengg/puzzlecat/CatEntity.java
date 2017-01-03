@@ -13,6 +13,7 @@ public class CatEntity implements Serializable {
 
   public int drawableID;
   public boolean isChecked;
+  public boolean isResume;
 
   public CatEntity(int drawableID) {
     this.drawableID = drawableID;
@@ -20,5 +21,9 @@ public class CatEntity implements Serializable {
 
   public void updateChecked() {
     this.isChecked = !isChecked;
+  }
+
+  public void updateResume() {
+    this.isResume = !isResume;
   }
 }

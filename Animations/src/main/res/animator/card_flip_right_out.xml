@@ -26,7 +26,7 @@
     2. The back is then made invisible (this is half-way through the
        animation).
     3. The back rotates another 90 degrees, from zero-width, to
-       100% of its normal width, but facing away from the user and
+       100% of its normalDrawable width, but facing away from the user and
        still invisible.
 
     This is accomplished using the 2 child animators below, executed in

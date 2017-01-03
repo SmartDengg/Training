@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/puzzle_root"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/puzzle_template_recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/black"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/margin_16"
+    android:paddingTop="@dimen/margin_16" />
+
+  <RelativeLayout
+    android:id="@+id/puzzle_drag_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/puzzle_template_recyclerview"
+    android:layout_alignParentTop="true"
+    android:gravity="center"
+    android:padding="@dimen/material_4dp" />
+
+  <RelativeLayout
+    android:id="@+id/tip_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/puzzle_template_recyclerview"
+    android:alpha="0.8"
+    android:background="@android:color/darker_gray"
+    android:visibility="visible">
+
+    <ImageButton
+      android:id="@+id/tip_cancel_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_margin="@dimen/material_8dp"
+      android:background="@android:color/transparent"
+      android:src="@drawable/prompt_icon_close" />
+
+    <TextView
+      android:id="@+id/tip_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toLeftOf="@id/tip_cancel_btn"
+      android:gravity="center"
+      android:padding="6dp"
+      android:text="长按图片可进行编辑：可删除或拖动，调整图片位置" />
+  </RelativeLayout>
+
+</RelativeLayout>

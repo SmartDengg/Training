@@ -1,4 +1,9 @@
 include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview',
+    ':dragview',
+    ':gesturedemo',
+    ':loader',
+    ':batterymanager',
+    ':mylibrary',
     ':puzzlecat',
     ':intentfilter',
     ':taskaffinity',
@@ -12,3 +17,4 @@ include ':Animations'
 include ':effectiveNavigation'
 include ':navigationDrawer'
 include ':notifyUser'
+include ':interactiveChart'

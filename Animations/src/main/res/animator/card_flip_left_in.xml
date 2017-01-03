@@ -28,7 +28,7 @@
     3. The back is then made visible (this is half-way through the
        animation).
     4. The back rotates another 90 degrees, from zero-width, to
-       100% of its normal width, facing the user.
+       100% of its normalDrawable width, facing the user.
 
     This is accomplished using the 3 child animators below, executed in
     parallel. Note that the last animator starts half-way into the animation.

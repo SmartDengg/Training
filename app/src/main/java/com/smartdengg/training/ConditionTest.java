@@ -11,6 +11,22 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConditionTest {
 
+  /**
+   * Animation type for views which are swiped successfully.
+   */
+  public static final int ANIMATION_TYPE_SWIPE_SUCCESS = 1 << 1;
+
+  /**
+   * Animation type for views which are not completely swiped thus will animate back to their
+   * original position.
+   */
+  public static final int ANIMATION_TYPE_SWIPE_CANCEL = 1 << 2;
+
+  /**
+   * Animation type for views that were dragged and now will animate to their final position.
+   */
+  public static final int ANIMATION_TYPE_DRAG = 1 << 3;
+
   private static class NumberWrapper {
     int value = 1;
   }
@@ -20,6 +36,10 @@ public class ConditionTest {
     //conditionLock();
 
     //objectLock();
+
+    System.out.println("ANIMATION_TYPE_DRAG = " + ANIMATION_TYPE_DRAG);
+    System.out.println("ANIMATION_TYPE_SWIPE_SUCCESS = " + ANIMATION_TYPE_SWIPE_SUCCESS);
+    System.out.println("ANIMATION_TYPE_SWIPE_CANCEL = " + ANIMATION_TYPE_SWIPE_CANCEL);
   }
 
   private static void objectLock() {

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.ViewAnimator;
 import com.smartdengg.puzzlecat.CatEntity;
+import com.smartdengg.puzzlecat.MarginDecoration;
 import com.smartdengg.puzzlecat.R;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.List;
  * 作者:  SmartDengg <br>
  * 描述:
  */
-public class PuzzleActivity extends Activity {
+public class PuzzleActivity extends Activity implements PuzzleAdapter.Callback {
 
   public static final String KEY = "IntegerArrayList";
 
@@ -37,6 +38,10 @@ public class PuzzleActivity extends Activity {
   private Bitmap bitmap;
   private ViewAnimator viewAnimator;
   private ViewGroup puzzleViewGroup;
+
+  private ItemTouchHelper itemTouchHelper;
+  private ItemDragHelperCallback callback;
+  private MarginDecoration marginDecoration;
 
   public static void start(Context context, List<CatEntity> list) {
     Intent intent = new Intent(context, PuzzleActivity.class);
@@ -71,6 +76,7 @@ public class PuzzleActivity extends Activity {
     this.recyclerView.setHasFixedSize(false);
 
     final PuzzleAdapter puzzleAdapter = new PuzzleAdapter(PuzzleActivity.this, items);
+
     final GridLayoutManager gridLayoutManager = new GridLayoutManager(PuzzleActivity.this, 2);
     gridLayoutManager.setAutoMeasureEnabled(true);
     gridLayoutManager.setSmoothScrollbarEnabled(true);
@@ -82,20 +88,52 @@ public class PuzzleActivity extends Activity {
       });
     }
     recyclerView.setLayoutManager(gridLayoutManager);
+    recyclerView.setItemAnimator(null);
 
-    ItemTouchHelper.Callback callback = new ItemDragHelperCallback(puzzleAdapter);
-    ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+    this.callback = new ItemDragHelperCallback(puzzleAdapter);
+    itemTouchHelper = new ItemTouchHelper(callback);
     itemTouchHelper.attachToRecyclerView(recyclerView);
-    recyclerView.setAdapter(puzzleAdapter);
+    this.recyclerView.setAdapter(puzzleAdapter);
+    this.marginDecoration = new MarginDecoration(PuzzleActivity.this);
+    puzzleAdapter.setCallback(this);
 
     findViewById(R.id.preview_btn).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-
         bitmap = retrieveViewSnapshot(findViewById(R.id.scrollview));
         viewAnimator.showNext();
         imageView.setImageBitmap(bitmap);
       }
     });
+
+    findViewById(R.id.confirm_btn).setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        callback.isLongPressDragEnabled = false;
+        updateDraggable();
+      }
+    });
+
+    updateDraggable();
+  }
+
+  private void updateDraggable() {
+    if (callback.isLongPressDragEnabled) {
+      findViewById(R.id.confirm_btn).setEnabled(true);
+      recyclerView.addItemDecoration(marginDecoration);
+    } else {
+      findViewById(R.id.confirm_btn).setEnabled(false);
+      recyclerView.removeItemDecoration(marginDecoration);
+    }
+  }
+
+  @Override public void onItemLongPressed() {
+    if (!callback.isLongPressDragEnabled) {
+      callback.isLongPressDragEnabled = true;
+      updateDraggable();
+    }
+  }
+
+  @Override public void startDrag(RecyclerView.ViewHolder viewHolder) {
+    if (callback.isLongPressDragEnabled) itemTouchHelper.startDrag(viewHolder);
   }
 
   @Override protected void onSaveInstanceState(Bundle outState) {

@@ -13,7 +13,6 @@
     android:padding="4dp"
     android:text="preview" />
 
-
   <ScrollView
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
