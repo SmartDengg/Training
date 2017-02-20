@@ -1,4 +1,8 @@
 include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview',
+    ':methodcounts',
+    ':imputmethod',
+    ':hardwarelayer',
+    ':circleprogress',
     ':dragview',
     ':gesturedemo',
     ':loader',
@@ -11,7 +15,7 @@ include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':
     ':dynamictheme',
     ':bigbitmap',
     ':wakelock',
-    ':customview'
+    ':customview', ':basicImmersiveMode', ':immersiveMode'
 include ':photoIntentActivity'
 include ':Animations'
 include ':effectiveNavigation'

@@ -1,9 +1,10 @@
 package com.smartdengg.dragview.puzzle;
 
+import android.support.annotation.DrawableRes;
 import android.util.SparseArray;
 import com.smartdengg.dragview.R;
-import com.smartdengg.dragview.entity.ImageEntity;
-import com.smartdengg.dragview.entity.TempEntity;
+import com.smartdengg.dragview.entity.ImageItem;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -11,100 +12,95 @@ import java.util.List;
 
 /**
  * 创建时间:  2016/12/28 12:16 <br>
- * 作者:  SmartDengg <br>
+ * 作者:  dengwei <br>
  * 描述:
  */
-//@formatter:off
 public enum TemplateGroup {
 
   MODE_UNKNOWN(GroupSymbol.UNKNOWN_SYMBOL) {
-    @Override List<TempEntity> apply() {
+    @Override List<Temp> apply() {
       return Collections.emptyList();
     }
   },
 
-  MODE_ONE(GroupSymbol.ONE_SYMBOL, Subset.ONE_MODE_11) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity =
-          new TempEntity(ids[0], R.drawable.format_1tu_pressed, R.drawable.format_1tu_pressed, true);
-      tempEntities.add(tempEntity);
+  MODE_ONE(GroupSymbol.ONE_SYMBOL, ID.ONE_MODE_11) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp = new Temp(ids[0], R.drawable.temp_1tu_pressed, R.drawable.temp_1tu_pressed, true);
+      tempEntities.add(temp);
       return tempEntities;
     }
   },
 
-  MODE_TWO(GroupSymbol.TWO_SYMBOL, Subset.TWO_MODE_21) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity =
-          new TempEntity(ids[0], R.drawable.format_2tu_pressed, R.drawable.format_2tu_pressed, true);
-      tempEntities.add(tempEntity);
+  MODE_TWO(GroupSymbol.TWO_SYMBOL, ID.TWO_MODE_21) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp = new Temp(ids[0], R.drawable.temp_2tu_pressed, R.drawable.temp_2tu_pressed, true);
+      tempEntities.add(temp);
       return tempEntities;
     }
   },
 
-  MODE_THREE(GroupSymbol.THREE_SYMBOL, Subset.THREE_MODE_31, Subset.THREE_MODE_32) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity1 =
-          new TempEntity(ids[0], R.drawable.format_3tu1_normol, R.drawable.format_3tu1_pressed, true);
-      TempEntity tempEntity2 =
-          new TempEntity(ids[1], R.drawable.format_3tu2_normol, R.drawable.format_3tu2_pressed, false);
-      tempEntities.add(tempEntity1);
-      tempEntities.add(tempEntity2);
+  MODE_THREE(GroupSymbol.THREE_SYMBOL, ID.THREE_MODE_31, ID.THREE_MODE_32) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp1 =
+          new Temp(ids[0], R.drawable.temp_3tu1_normol, R.drawable.temp_3tu1_pressed, true);
+      Temp temp2 =
+          new Temp(ids[1], R.drawable.temp_3tu2_normol, R.drawable.temp_3tu2_pressed, false);
+      tempEntities.add(temp1);
+      tempEntities.add(temp2);
       return tempEntities;
     }
   },
 
-  MODE_FOUR(GroupSymbol.FOUR_SYMBOL, Subset.FOUR_MODE_41) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity =
-          new TempEntity(ids[0], R.drawable.format_4tu_pressed, R.drawable.format_4tu_pressed, true);
-      tempEntities.add(tempEntity);
+  MODE_FOUR(GroupSymbol.FOUR_SYMBOL, ID.FOUR_MODE_41) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp = new Temp(ids[0], R.drawable.temp_4tu_pressed, R.drawable.temp_4tu_pressed, true);
+      tempEntities.add(temp);
       return tempEntities;
     }
   },
 
-  MODE_FIVE(GroupSymbol.FIVE_SYMBOL,Subset.FIVE_MODE_51,Subset.FIVE_MODE_52,Subset.FIVE_MODE_53) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity1 =
-          new TempEntity(ids[0], R.drawable.format_5tu1_normol, R.drawable.format_5tu1_pressed, true);
-      TempEntity tempEntity2 =
-          new TempEntity(ids[1], R.drawable.format_5tu2_normol, R.drawable.format_5tu2_pressed, false);
-      // TODO: 16/12/28 UI少给了张图
-      TempEntity tempEntity3 =
-          new TempEntity(ids[2], R.drawable.format_5tu3_normol, R.drawable.format_5tu2_pressed, false);
+  MODE_FIVE(GroupSymbol.FIVE_SYMBOL, ID.FIVE_MODE_51, ID.FIVE_MODE_52, ID.FIVE_MODE_53) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp1 =
+          new Temp(ids[0], R.drawable.temp_5tu1_normol, R.drawable.temp_5tu1_pressed, true);
+      Temp temp2 =
+          new Temp(ids[1], R.drawable.temp_5tu2_normol, R.drawable.temp_5tu2_pressed, false);
+      Temp temp3 =
+          new Temp(ids[2], R.drawable.temp_5tu3_normol, R.drawable.temp_5tu3_pressed, false);
 
-      tempEntities.add(tempEntity1);
-      tempEntities.add(tempEntity2);
-      tempEntities.add(tempEntity3);
+      tempEntities.add(temp1);
+      tempEntities.add(temp2);
+      tempEntities.add(temp3);
       return tempEntities;
     }
   },
 
-  MODE_SIX(GroupSymbol.SIX_SYMBOL,Subset.SIX_MODE_61) {
-    @Override List<TempEntity> apply() {
-      List<TempEntity> tempEntities = new ArrayList<>(ids.length);
-      TempEntity tempEntity =
-          new TempEntity(ids[0], R.drawable.format_6tu_pressed, R.drawable.format_6tu_pressed, true);
-      tempEntities.add(tempEntity);
+  MODE_SIX(GroupSymbol.SIX_SYMBOL, ID.SIX_MODE_61) {
+    @Override List<Temp> apply() {
+      List<Temp> tempEntities = new ArrayList<>(ids.length);
+      Temp temp = new Temp(ids[0], R.drawable.temp_6tu_pressed, R.drawable.temp_6tu_pressed, true);
+      tempEntities.add(temp);
       return tempEntities;
     }
   };
 
-  String symbol;
-  int[] ids = new int[0];
+  public String symbol;
+  public int[] ids = new int[0];
 
-  TemplateGroup(){}
+  TemplateGroup() {
+  }
 
   TemplateGroup(String symbol, int... ids) {
     this.symbol = symbol;
     this.ids = ids;
   }
 
-  abstract List<TempEntity> apply();
+  abstract List<Temp> apply();
 
   /** 根据图片个数，对模板进行分类 */
   private static final int UNKNOWN_MODE = 0;
@@ -115,7 +111,7 @@ public enum TemplateGroup {
   private static final int FIVE_MODE = 5;
   private static final int SIX_MODE = 6;
 
-  private static class GroupSymbol{
+  private static class GroupSymbol {
     private static final String UNKNOWN_SYMBOL = "UNKNOWN";
     private static final String ONE_SYMBOL = "ONE";
     private static final String TWO_SYMBOL = "TWO";
@@ -125,7 +121,7 @@ public enum TemplateGroup {
     private static final String SIX_SYMBOL = "SIX";
   }
 
-  public static class Subset{
+  public static class ID {
     public static final int ONE_MODE_11 = 11;
     public static final int TWO_MODE_21 = 21;
     public static final int THREE_MODE_31 = 31;
@@ -142,12 +138,12 @@ public enum TemplateGroup {
   static {
     EnumSet<TemplateGroup> templateGroups = EnumSet.allOf(TemplateGroup.class);
     TemplateGroup[] groups = templateGroups.toArray(new TemplateGroup[templateGroups.size()]);
-    for (int i = 0,n = groups.length;i<n;i++){
-      GROUP_SPARSE_ARRAY.append(i,groups[i]);
+    for (int i = 0, n = groups.length; i < n; i++) {
+      GROUP_SPARSE_ARRAY.append(i, groups[i]);
     }
   }
 
-  public static TemplateGroup correspondTemplate(List<ImageEntity> items) {
+  public static TemplateGroup correspondTemplate(List<ImageItem> items) {
 
     if (items == null) return TemplateGroup.MODE_UNKNOWN;
 
@@ -177,6 +173,27 @@ public enum TemplateGroup {
 
       default:
         throw new IllegalStateException("no mode items size = " + mode);
+    }
+  }
+
+  public static class Temp implements Serializable {
+
+    private static final long serialVersionUID = -4133458106480471240L;
+
+    int ID;
+    int normalDrawable;
+    int selectedDrawable;
+    boolean isSelected;
+
+    public int normalSize;
+    public int largeSize;
+
+    Temp(int ID, @DrawableRes int normalDrawable, @DrawableRes int selectedDrawable,
+        boolean isSelected) {
+      this.ID = ID;
+      this.normalDrawable = normalDrawable;
+      this.selectedDrawable = selectedDrawable;
+      this.isSelected = isSelected;
     }
   }
 }

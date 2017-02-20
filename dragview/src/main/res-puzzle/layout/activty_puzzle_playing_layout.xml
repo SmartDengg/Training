@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white">
+
+  <Button
+    android:id="@+id/puzzle_completed"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="完成"
+    android:visibility="visible" />
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/puzzle_template_recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/black"
+    android:clipToPadding="false"
+    android:padding="@dimen/material_4dp" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/puzzle_template_recyclerview"
+    android:layout_below="@id/puzzle_completed"
+    android:background="@color/background"
+    android:gravity="center">
+
+    <com.smartdengg.dragview.puzzle.DragControllerLayout
+      android:id="@+id/puzzle_dragframe_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_centerInParent="true"
+      android:background="@android:color/white"
+      android:gravity="center"
+      android:padding="@dimen/material_4dp" />
+
+  </RelativeLayout>
+
+
+  <RelativeLayout
+    android:id="@+id/puzzle_tip_container"
+    android:layout_width="match_parent"
+    android:layout_height="28dp"
+    android:layout_above="@+id/puzzle_template_recyclerview"
+    android:alpha="0.9"
+    android:background="#4a4e59">
+
+    <TextView
+      android:id="@+id/puzzle_tip_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:layout_centerVertical="true"
+      android:gravity="center"
+      android:text="@string/puzzle_playing_tip"
+      android:textColor="@android:color/white"
+      android:textSize="13dp" />
+
+    <ImageButton
+      android:id="@+id/puzzle_tip_cancel_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="@dimen/material_8dp"
+      android:layout_toRightOf="@id/puzzle_tip_tv"
+      android:background="@android:color/transparent"
+      android:gravity="center"
+      android:scaleType="centerInside"
+      android:src="@drawable/prompt_icon_close" />
+  </RelativeLayout>
+
+</RelativeLayout>

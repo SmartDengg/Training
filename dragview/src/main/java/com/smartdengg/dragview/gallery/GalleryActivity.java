@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.Toast;
 import com.smartdengg.dragview.MarginDecoration;
 import com.smartdengg.dragview.R;
-import com.smartdengg.dragview.entity.ImageEntity;
-import com.smartdengg.dragview.puzzle.PuzzleActivity;
+import com.smartdengg.dragview.entity.ImageItem;
+import com.smartdengg.dragview.puzzle.PuzzlePlayingActivity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +29,7 @@ public class GalleryActivity extends Activity {
       R.drawable.icon_7, R.drawable.icon_8, R.drawable.icon_9
   };
 
-  private RecyclerView mRecyclerView;
-  private List<ImageEntity> selectedItems = new ArrayList<>(DRAWABLES.length);
+  private List<ImageItem> selectedItems = new ArrayList<>(DRAWABLES.length);
 
   public static void start(Context context) {
     Intent intent = new Intent(context, GalleryActivity.class);
@@ -42,26 +41,29 @@ public class GalleryActivity extends Activity {
     setContentView(R.layout.gallery_layout);
     setTitle("gallery activity");
 
-    this.mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-    final List<ImageEntity> items = new ArrayList<>(DRAWABLES.length);
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+    final List<ImageItem> items = new ArrayList<>(DRAWABLES.length);
 
     //noinspection ForLoopReplaceableByForEach
-    for (int i = 0, n = DRAWABLES.length; i < n; i++)
-      items.add(new ImageEntity(DRAWABLES[i]));
+    for (int i = 0, n = DRAWABLES.length; i < n; i++) {
+      ImageItem item = new ImageItem();
+      item.drawableID = DRAWABLES[i];
+      items.add(item);
+    }
 
     final GalleryAdapter galleryAdapter = new GalleryAdapter(GalleryActivity.this, items);
-    this.mRecyclerView.setHasFixedSize(true);
-    this.mRecyclerView.setAdapter(galleryAdapter);
-    this.mRecyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this, 3));
-    this.mRecyclerView.addItemDecoration(
+    recyclerView.setHasFixedSize(true);
+    recyclerView.setAdapter(galleryAdapter);
+    recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this, 3));
+    recyclerView.addItemDecoration(
         new MarginDecoration(GalleryActivity.this, R.dimen.material_2dp));
 
     galleryAdapter.setCallback(new GalleryAdapter.Callback() {
-      @Override public void onItemClick(ImageEntity catEntity) {
-        if (selectedItems.contains(catEntity)) {
-          selectedItems.remove(catEntity);
+      @Override public void onItemClick(ImageItem imageItem) {
+        if (selectedItems.contains(imageItem)) {
+          selectedItems.remove(imageItem);
         } else {
-          selectedItems.add(catEntity);
+          selectedItems.add(imageItem);
         }
       }
     });
@@ -79,7 +81,7 @@ public class GalleryActivity extends Activity {
           return;
         }
 
-        PuzzleActivity.start(GalleryActivity.this, selectedItems);
+        PuzzlePlayingActivity.start(GalleryActivity.this, selectedItems);
       }
     });
   }

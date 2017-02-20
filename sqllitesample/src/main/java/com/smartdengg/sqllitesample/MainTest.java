@@ -1,8 +1,5 @@
 package com.smartdengg.sqllitesample;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 /**
  * 创建时间:  2016/11/08 21:44 <br>
  * 作者:  SmartDengg <br>
@@ -13,18 +10,27 @@ public class MainTest {
 
   public static void main(String[] args) throws InterruptedException {
 
-    ExecutorService executorService = Executors.newCachedThreadPool();
+    int a = 1;
+    int b = 2;
+    int c = 3;
 
-    for (int i = 0; i < 10; i++) {
+    int result = 0;
 
-      Thread.sleep(65_000);
+    result |= a;
+    System.out.println(result);
 
-      executorService.execute(new Runnable() {
-        @Override public void run() {
+    result |= b;
+    System.out.println(result);
 
-          System.out.println(Thread.currentThread().getName());
-        }
-      });
-    }
+    result &= ~a;
+    System.out.println(result);
+
+    result ^= a;
+    System.out.println(result);
+
+    result ^= a;
+    System.out.println(result);
+
+    for (; ; ) ;
   }
 }

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import com.smartdengg.dragview.R;
-import com.smartdengg.dragview.entity.ImageEntity;
+import com.smartdengg.dragview.entity.ImageItem;
 import java.util.List;
 
 /**
@@ -20,10 +20,10 @@ import java.util.List;
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHolder> {
 
   private Context context;
-  private List<ImageEntity> items;
+  private List<ImageItem> items;
   private Callback mCallback;
 
-  public GalleryAdapter(Context context, List<ImageEntity> items) {
+  public GalleryAdapter(Context context, List<ImageItem> items) {
     this.context = context;
     this.items = items;
   }
@@ -37,17 +37,17 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
   @Override public void onBindViewHolder(final ViewHolder holder, int position) {
 
     final int adapterPosition = holder.getAdapterPosition();
-    final ImageEntity ImageEntity = items.get(adapterPosition);
-    holder.mCheckBox.setChecked(ImageEntity.isChecked);
+    final ImageItem imageEntity = items.get(adapterPosition);
+    holder.mCheckBox.setChecked(imageEntity.isSelected());
     final ImageView imageView = holder.mImageView;
-    imageView.setImageResource(ImageEntity.drawableID);
+    imageView.setImageResource(imageEntity.drawableID);
 
     imageView.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        ImageEntity.updateChecked();
+        imageEntity.setSelected(!imageEntity.isSelected());
         notifyItemChanged(adapterPosition);
 
-        if (mCallback != null) mCallback.onItemClick(ImageEntity);
+        if (mCallback != null) mCallback.onItemClick(imageEntity);
       }
     });
   }
@@ -73,6 +73,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
   }
 
   public interface Callback {
-    void onItemClick(ImageEntity ImageEntity);
+    void onItemClick(ImageItem ImageEntity);
   }
 }

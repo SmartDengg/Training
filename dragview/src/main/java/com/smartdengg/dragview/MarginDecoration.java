@@ -8,7 +8,7 @@ import android.view.View;
 
 /**
  * 创建时间:  2016/12/19 17:10 <br>
- * 作者:  SmartDengg <br>
+ * 作者:  dengwei <br>
  * 描述:
  */
 public class MarginDecoration extends RecyclerView.ItemDecoration {

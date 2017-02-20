@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Dragview</string>
+  <string name="puzzle_playing_tip">长按进入编辑状态</string>
 </resources>

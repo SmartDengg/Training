@@ -9,4 +9,5 @@
   <dimen name="material_8dp">8dp</dimen>
   <dimen name="margin_16">16dp</dimen>
   <dimen name="margin_19">19dp</dimen>
+  <dimen name="material_10dp">10dp</dimen>
 </resources>

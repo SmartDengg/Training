@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <declare-styleable name="CircleProgress">
+    <attr name="radius" format="dimension|reference" />
+    <attr name="strokeWidth" format="dimension|reference" />
+    <attr name="initialColor" format="color|reference" />
+    <attr name="progressColor" format="color|reference" />
+    <attr name="startingPoint" format="integer|reference" />
+    <attr name="preFillPoint" format="integer|reference" />
+    <attr name="useCenter" format="boolean" />
+  </declare-styleable>
+
+</resources>

@@ -3,6 +3,7 @@ package com.smartdengg.activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.SparseArray;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
       }
     });
+
+    Parcel parcel = Parcel.obtain();
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {
