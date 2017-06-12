@@ -11,10 +11,36 @@ public class Callbacks {
     T call(T value);
   }
 
-  class StringCallback implements Callback<Integer> {
+  class IntegerCallback implements Callback<Integer> {
 
     @Override public Integer call(Integer value) {
       return null;
+    }
+  }
+
+  class CharSequenceCallback implements Callback<CharSequence> {
+
+    @Override public CharSequence call(CharSequence value) {
+      return null;
+    }
+  }
+
+  class StringCallback extends CharSequenceCallback {
+
+    @Override public String call(CharSequence value) {
+
+      super.call("");
+
+      test();
+      test1();
+
+      return null;
+    }
+
+    private void test() {
+    }
+
+    public void test1() {
     }
   }
 }

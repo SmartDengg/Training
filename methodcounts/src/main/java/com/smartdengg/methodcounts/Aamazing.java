@@ -5,11 +5,9 @@ package com.smartdengg.methodcounts;
  * 作者:  SmartDengg <br>
  * 描述:
  */
-
 public class Aamazing {
 
   int c;
-
   int count;
 
   private void test() {
