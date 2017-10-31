@@ -1,36 +1,23 @@
-include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview',
-    ':classloader',
+include ':app', ':sqllitesample', ':searchview',
     ':parabola',
     ':concurrent',
     ':generic',
     ':bottomdialog',
     ':broadcastplaceholder',
-    ':reactive2',
-    ':leaks',
-    ':gridlayout',
+    ':reactive2' ,
     ':indicators',
     ':reactive',
-    ':scalpel',
-    ':methodcounts',
-    ':imputmethod',
+    ':scalpel' ,
     ':hardwarelayer',
     ':circleprogress',
     ':dragview',
-    ':gesturedemo',
-    ':loader',
-    ':batterymanager',
-    ':mylibrary',
     ':puzzlecat',
     ':intentfilter',
     ':taskaffinity',
-    ':activity',
     ':dynamictheme',
     ':bigbitmap',
-    ':wakelock',
-    ':customview', ':basicImmersiveMode', ':immersiveMode'
+    ':wakelock' , ':basicImmersiveMode', ':immersiveMode'
 include ':photoIntentActivity'
 include ':Animations'
 include ':effectiveNavigation'
 include ':navigationDrawer'
-include ':notifyUser'
-include ':interactiveChart'

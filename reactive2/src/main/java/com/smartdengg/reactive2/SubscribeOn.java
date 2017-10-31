@@ -4,7 +4,6 @@ import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import java.lang.reflect.Proxy;
 
 /**
  * 创建时间:  2017/10/30 12:19 <br>
@@ -26,8 +25,6 @@ public class SubscribeOn {
         System.out.println(Thread.currentThread().toString());
       }
     });
-
-    Proxy.newProxyInstance()
 
     for (; ; ) ;
   }
