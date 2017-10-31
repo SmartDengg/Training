@@ -42,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
     });
 
     Parcel parcel = Parcel.obtain();
+
+    ClassLoader loader = MainActivity.class.getClassLoader();
+    while (loader != null) {
+      System.out.println(loader.toString());
+      loader = loader.getParent();
+    }
+
+    /*I/System.out: dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/com.smartdengg.activity-1.apk"],nativeLibraryDirectories=[/data/app-lib/com.smartdengg.activity-1, /vendor/lib, /system/lib]]]*/
+    String classPath = System.getProperty("java.class.path", ".");
+    String librarySearchPath = System.getProperty("java.library.path", "");
+
+    System.out.println(classPath);
+    System.out.println(librarySearchPath);
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {

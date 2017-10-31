@@ -1,4 +1,7 @@
 include ':app', ':displayingBitmaps', ':sqllitesample', ':myapp1', ':myapp2', ':searchview',
+    ':classloader',
+    ':parabola',
+    ':concurrent',
     ':generic',
     ':bottomdialog',
     ':broadcastplaceholder',
