@@ -1,13 +1,13 @@
-include ':app', ':sqllitesample', ':searchview',
+include ':app', ':sqllitesample', ':searchview', ':myapplication',
     ':parabola',
     ':concurrent',
     ':generic',
     ':bottomdialog',
     ':broadcastplaceholder',
-    ':reactive2' ,
+    ':reactive2',
     ':indicators',
     ':reactive',
-    ':scalpel' ,
+    ':scalpel',
     ':hardwarelayer',
     ':circleprogress',
     ':dragview',
@@ -16,8 +16,7 @@ include ':app', ':sqllitesample', ':searchview',
     ':taskaffinity',
     ':dynamictheme',
     ':bigbitmap',
-    ':wakelock' , ':basicImmersiveMode', ':immersiveMode'
+    ':wakelock'
 include ':photoIntentActivity'
 include ':Animations'
-include ':effectiveNavigation'
 include ':navigationDrawer'
